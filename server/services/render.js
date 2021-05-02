@@ -11,6 +11,15 @@ exports.homeroute = (req,res)=>{
             res.send(err);
         });   
     };
+exports.filterRoute = (req,res)=>{
+    axios.get('http://localhost:3000/api/users',{params:req.query}).then((response)=>{
+            console.log(response);
+            res.render('index',{users:response.data});
+
+        }).catch(err=>{
+            res.send(err);
+        });   
+    };
 exports.addUser = (req,res)=>{
     res.render('add_user');
     };
