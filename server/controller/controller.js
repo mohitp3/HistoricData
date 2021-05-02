@@ -36,8 +36,40 @@ exports.create = (req,res)=>{
 
 // retrieve and return all users/ retrive and return a single user
 exports.find = (req, res)=>{
+    let params = {};
+    if(req.query.email){
+        params['email'] = req.query.email;
+    }
+    if(req.query.environment){
+        params['environment'] = req.query.environment;
+    }
+    if(req.query.component){
+        params['component'] = req.query.component;
+    }
+    if(req.query.message){
+        params['message'] = req.query.message;
+    }
+    if(req.query.fromDate){
+        params['created_at'] = {};
+        params.created_at['$gte'] = req.query.fromDate ? new Date(req.query.fromDate) : new Date(new Date().setDate(new Date().getDate()-30))
+     }
+    if(req.query.toDate){
+        params.created_at['$lt'] = req.query.toDate ? new Date(req.query.toDate) : new Date()        
+    }
+    if(Object.keys(params).length > 0){
 
-    if(req.query.id){
+        Userdb.find(params)
+            .then(data =>{
+                if(!data){
+                    res.status(404).send({ message : "Not found user with filter "})
+                }else{
+                    res.send(data)
+                }
+            }).catch(err =>{
+                res.status(500).send({ message: "Erro retrieving  "})
+            })
+
+    }else if(req.query.id){
         const id = req.query.id;
 
         Userdb.findById(id)
