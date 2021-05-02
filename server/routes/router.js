@@ -5,6 +5,8 @@ const controller = require('../controller/controller');
 
 route.get('/',services.homeroute);
 
+route.get('/filter',services.filterRoute);
+
 route.get('/add-user',services.addUser);
 
 route.get('/update-user',services.updateUser);
