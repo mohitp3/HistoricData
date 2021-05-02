@@ -1,0 +1,58 @@
+<!-- include header -->
+<%- include('include/_header') %>
+<!-- /include header -->
+
+  <!-- Main Site -->
+  <main id="site-main">
+    <div class="container">
+        <div class="box-nav d-flex justify-between">
+           <div class="filter">
+               <a href="/"><i class="fas fa-angle-double-left"></i> All Users</a>
+           </div>
+        </div>
+        <div class="form-title text-center">
+            <h2 class="text-dark">Update User</h2>
+            <span class="text-light">Use the below form to Update an account</span>
+        </div>
+        <!-- add user form -->
+         <!-- form handling -->
+ <form method="POST" id="updateUser">
+    <div class="new_user">
+        
+        
+        <div class="form-group">
+            <label for="email" class="text-light">Email</label>
+            <input type="hidden" name="time" value = ''>
+            <input type="text" name="email" value="<%= user.email %>" placeholder="example@abc.com">
+        </div>
+        <div class="form-group">
+            <label for="environment" class="text-light">Environment</label>
+            <input type="text" name="environment" value = '<%= user.environment %>' placeholder="">
+        </div>
+        <div class="form-group">
+            <label for="component" class="text-light">Component</label>
+            <input type="text" name="component" value = '<%= user.component %>' placeholder="">
+        </div>
+        <div class="form-group">
+            <label for="message" class="text-light">Message</label>
+            <input type="text" name="message" value = '<%= user.message %>' placeholder="">
+        </div>
+        <div class="form-group">
+            <label for="data" class="text-light">Data</label>
+            <textarea  type="" name="data" value = ''rows="4" cols="25"><%= user.data %></textarea>
+        </div>
+        
+        <div class="form-group">
+            <button type="submit" class="btn text-dark update">Save</button>
+        </div>
+
+    </div>
+</form>
+       
+    </div>
+</main>
+<!-- /Main Site -->
+
+<!-- include footer -->
+<%- include('include/_footer') %>
+<!-- /include footer -->

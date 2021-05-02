@@ -1,0 +1,54 @@
+<form action = '/api/users'method="POST" id="addUser">
+    <div class="new_user">
+        
+        <div class="form-group">
+            <label for="email" class="text-light">Email</label>
+            <input type="hidden" name="id" value = ''>
+            <input type="hidden" name="time" value = ''>
+            <input type="text" name="email" value = '' placeholder="example@abc.com">
+        </div>
+        <div class="form-group">
+            <label for="environment" class="text-light">Environment</label>
+            <input type="text" name="environment" value = '' placeholder="">
+        </div>
+        <div class="form-group">
+            <label for="component" class="text-light">Component</label>
+            <input type="text" name="component" value = '' placeholder="">
+        </div>
+        <div class="form-group">
+            <label for="message" class="text-light">Message</label>
+            <input type="text" name="message" value = '' placeholder="">
+        </div>
+        <div class="form-group">
+            <label for="data" class="text-light">Data</label>
+            <textarea  type="" name="data" value = ''rows="4" cols="25"></textarea>
+        </div>
+        <!-- <div class="form-group">
+            <label for="gender" class="text-light">Gender</label>
+            <div class="radio inline">
+                <input type="radio" id="radio-2" name="gender" value="Male" >
+                <label for="radio-2" class="radio-label">Male</label>
+            </div>
+            <div class="radio inline">
+                <input type="radio" id="radio-3" name="gender" value="Female" >
+                <label for="radio-3" class="radio-label">Female</label>
+            </div>
+        </div> -->
+
+        <!-- <div class="form-group">
+            <label for="gender" class="text-light">Status</label>
+            <div class="radio inline">
+                <input type="radio" id="radio-4" name="status" value="Active" >
+                <label for="radio-4" class="radio-label">Active</label>
+            </div>
+            <div class="radio inline">
+                <input type="radio" id="radio-5" name="status" value="Inactive" >
+                <label for="radio-5" class="radio-label">Inactive</label>
+            </div>
+        </div> -->
+    <!-- </div> -->
+    <div class="form-group">
+        <button type="submit" class="btn text-dark update">Save</button>
+    </div>
+</div>
+</form>

@@ -1,0 +1,26 @@
+<% for(let i=0;i<users.length;i++){ %>
+
+<tr>
+    <td><%= users[i]._id %></td>
+    <td><%= users[i].email %></td>
+    <td><%= users[i].component %></td>
+    <td><%= users[i].environment %></td>
+    <td><%= users[i].data %></td>
+    <td><%= new Date(users[i].date) %></td>
+    <td>
+        <a href='/update-user?id=<%=users[i]._id %>' class="btn border-shadow">
+            <span class="test-gradient">
+                <i class="fas fa-pencil-alt"></i>
+            </span>
+
+        </a>
+        <a class="btn border-shadow delete" data-id="<%=users[i]._id %>">
+            <span class="test-gradient">
+                <i class="fas fa-times"></i>
+            </span>
+
+        </a>
+    </td>
+
+</tr>
+<% }%>
